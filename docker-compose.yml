@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  fiyat-takip-botu:
+    build: .
+    container_name: tr_fiyat_botu_v1
+    restart: unless-stopped  # Bilgisayar kapanıp açılsa bile bot otomatik başlar!
+    volumes:
+      # Müşterinin masaüstündeki dosyaları, botun içine canlı olarak bağla.
+      # Böylece müşteri kodun içine girmeden link ekleyebilir veya loglara bakabilir.
+      - ./urls.txt:/app/urls.txt
+      - ./data.json:/app/data.json
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1

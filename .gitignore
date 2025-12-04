@@ -1,8 +1,15 @@
-# Güvenlik (Şifreler buradadır, ASLA yükleme)
+# Güvenlik (Şifreler)
 .env
 
-# Gereksiz Klasörler
+# Gereksiz Sistem Dosyaları
 venv/
 __pycache__/
+*.pyc
 .DS_Store
+
+# Veritabanı ve Loglar
+data.json
 *.log
+
+# Oluşturulan Paketler
+*.zip
